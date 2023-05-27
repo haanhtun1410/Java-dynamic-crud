@@ -13,7 +13,7 @@
 <div class="container">
     <h2>Add CuaHansg</h2>
 
-    <form:form action="/nhan-vien/update/${id}" method="POST" modelAttribute="nhanVien">
+    <form:form action="/nhan-vien/update/${id}" method="POST" modelAttribute="nhanVienTEST">
         <div class="form-group">
             <label for="ma">Ma:</label>
             <form:errors path="ma"></form:errors>

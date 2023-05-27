@@ -1,16 +1,15 @@
-package com.example.demo_springboot.model;
+package com.example.demo_springboot.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class NhanVien {
+public class NhanVienTEST {
     private Long id;
     private String ma;
     private String ten;

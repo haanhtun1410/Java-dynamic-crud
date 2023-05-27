@@ -14,8 +14,8 @@
 <body>
 <div class="container">
     <h2>Edit NhanVien</h2>
-    <%--@elvariable id="nhanVien" type=""--%>
-    <form:form action="/nhan-vien/add" method="POST" modelAttribute="nhanVien">
+    <%--@elvariable id="nhanVienTEST" type=""--%>
+    <form:form action="/nhan-vien/add" method="POST" modelAttribute="nhanVienTEST">
         <div class="form-group">
             <label for="ma">Ma:</label>
             <form:input path="ma" id="ma" class="form-control" />

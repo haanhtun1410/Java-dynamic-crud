@@ -27,20 +27,20 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${nhanVienList}" var="nhanVien">
+        <c:forEach items="${nhanVienList}" var="nhanVienTEST">
             <tr>
-                <td>${nhanVien.ma}</td>
-                <td>${nhanVien.ten}</td>
-                <td>${nhanVien.gioiTinh}</td>
-                <td>${nhanVien.ngaySinh}</td>
-                <td>${nhanVien.diaChi}</td>
-                <td>${nhanVien.sdt}</td>
-                <td>${nhanVien.matKhau}</td>
-                <td>${nhanVien.trangThai}</td>
+                <td>${nhanVienTEST.ma}</td>
+                <td>${nhanVienTEST.ten}</td>
+                <td>${nhanVienTEST.gioiTinh}</td>
+                <td>${nhanVienTEST.ngaySinh}</td>
+                <td>${nhanVienTEST.diaChi}</td>
+                <td>${nhanVienTEST.sdt}</td>
+                <td>${nhanVienTEST.matKhau}</td>
+                <td>${nhanVienTEST.trangThai}</td>
                 <td>
-                    <a href="/nhan-vien/edit/${nhanVien.id}" class="btn btn-sm btn-primary mr-2">Edit</a>
+                    <a href="/nhan-vien/edit/${nhanVienTEST.id}" class="btn btn-sm btn-primary mr-2">Edit</a>
                     <!-- Button to delete brand -->
-                    <a href="/nhan-vien/delete/${nhanVien.id}" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="/nhan-vien/delete/${nhanVienTEST.id}" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
         </c:forEach>

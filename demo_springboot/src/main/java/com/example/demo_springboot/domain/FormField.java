@@ -1,4 +1,4 @@
-package com.example.demo_springboot.model;
+package com.example.demo_springboot.domain;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
