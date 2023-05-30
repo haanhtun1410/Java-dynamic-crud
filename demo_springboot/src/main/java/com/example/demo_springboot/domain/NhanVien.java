@@ -18,52 +18,66 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class NhanVien implements java.io.Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", unique = true, nullable = false, length = 36)
+    @FormField(label = "ID", type = FormField.FieldType.TEXT)
     private UUID id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "IdCV")
+    @FormField(label = "Chức Vụ", type = FormField.FieldType.SELECT)
     private ChucVu chucVu;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "IdCH")
+    @FormField(label = "Cửa Hàng", type = FormField.FieldType.SELECT)
     private CuaHang cuaHang;
 
     @Column(name = "Ma", unique = true, length = 20)
+    @FormField(label = "Mã Nhân Viên", type = FormField.FieldType.TEXT)
     private String ma;
 
     @Column(name = "Ten")
+    @FormField(label = "Tên", type = FormField.FieldType.TEXT)
     private String ten;
 
     @Column(name = "TenDem")
+    @FormField(label = "Tên Đệm", type = FormField.FieldType.TEXT)
     private String tenDem;
 
     @Column(name = "Ho")
+    @FormField(label = "Họ", type = FormField.FieldType.TEXT)
     private String ho;
 
     @Column(name = "GioiTinh")
+    @FormField(label = "Giới Tính", type = FormField.FieldType.TEXT)
     private String gioiTinh;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "NgaySinh", length = 10)
+    @FormField(label = "Ngày Sinh", type = FormField.FieldType.DATE)
     private Date ngaySinh;
 
     @Column(name = "DiaChi")
+    @FormField(label = "Địa Chỉ", type = FormField.FieldType.TEXT)
     private String diaChi;
 
     @Column(name = "Sdt", length = 30)
+    @FormField(label = "Số Điện Thoại", type = FormField.FieldType.TEXT)
     private String sdt;
 
     @Column(name = "MatKhau")
+    @FormField(label = "Mật Khẩu", type = FormField.FieldType.PASSWORD)
     private String matKhau;
 
     @Column(name = "TrangThai")
+    @FormField(label = "Trạng Thái", type = FormField.FieldType.NUMBER)
     private int trangThai;
 
     @Override
     public String toString() {
-        return "hoten: " + ho + " " + tenDem + " " + ten;
+        return "Họ Tên: " + ho + " " + tenDem + " " + ten;
     }
 }

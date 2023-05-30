@@ -24,7 +24,7 @@ public class ChucVu  implements java.io.Serializable {
     @Id
     @Column(name = "Id", unique = true, length = 36)
     @FormField(label = "id",type = FormField.FieldType.TEXT)
-    private UUID id;
+    private String id;
 
     @FormField(label = "Mã",type = FormField.FieldType.TEXT)
     @Column(name = "Ma", unique = true, length = 20)

@@ -12,7 +12,9 @@ public @interface FormField {
 
     enum FieldType {
         TEXT("text"),
+        PASSWORD("password"),
         NUMBER("number"),
+        SELECT("select"),
         BOOLEAN("checkbox"),
         DATE("date");
         private final String inputType;

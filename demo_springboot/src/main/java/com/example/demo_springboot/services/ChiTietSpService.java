@@ -4,6 +4,7 @@ import com.example.demo_springboot.domain.ChiTietSp;
 import com.example.demo_springboot.repos.ChiTietSpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,6 +16,7 @@ public class ChiTietSpService implements TemplateService<ChiTietSp, UUID> {
     private ChiTietSpRepository chiTietSpRepository;
 
     @Override
+    @Transactional
     public List<ChiTietSp> findAll() {
         return chiTietSpRepository.findAll();
     }

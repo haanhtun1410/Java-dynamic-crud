@@ -5,6 +5,8 @@ package com.example.demo_springboot.domain;
 import lombok.*;
 import java.util.UUID;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Type;
+
 import java.util.Set;
 
 @Entity
@@ -18,12 +20,16 @@ import java.util.Set;
 @AllArgsConstructor
 public class DongSp implements java.io.Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "Id", unique = true, nullable = false, length = 36)
+    @FormField(label = "ID", type = FormField.FieldType.TEXT)
+    private String id;
 
+    @FormField(label = "Mã sản phẩm", type = FormField.FieldType.TEXT)
     @Column(name = "Ma", unique = true, length = 20)
     private String ma;
 
+    @FormField(label = "Tên sản phẩm", type = FormField.FieldType.TEXT)
     @Column(name = "Ten")
     private String ten;
 
