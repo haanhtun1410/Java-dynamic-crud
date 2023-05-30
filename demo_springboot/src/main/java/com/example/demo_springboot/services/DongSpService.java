@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
-@Service
+@Service("DongSp")
 public class DongSpService implements TemplateService<DongSp, UUID> {
 
     @Autowired

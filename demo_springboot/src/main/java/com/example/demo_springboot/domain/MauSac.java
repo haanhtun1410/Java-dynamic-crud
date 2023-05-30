@@ -25,14 +25,6 @@ public class MauSac implements java.io.Serializable {
     @Column(name = "Ten")
     private String ten;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "mauSac", cascade = CascadeType.ALL)
-    private Set<ChiTietSp> chiTietSps;
-
-    public MauSac(String ma, String ten) {
-        this.ma = ma;
-        this.ten = ten;
-    }
-
     @Override
     public String toString() {
         return ten;

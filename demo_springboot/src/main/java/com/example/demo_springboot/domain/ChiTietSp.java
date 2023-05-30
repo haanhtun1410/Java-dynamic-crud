@@ -49,4 +49,5 @@ public class ChiTietSp implements java.io.Serializable {
     @Column(name = "GiaBan", precision = 20, scale = 0)
     private BigDecimal giaBan;
 
+
 }

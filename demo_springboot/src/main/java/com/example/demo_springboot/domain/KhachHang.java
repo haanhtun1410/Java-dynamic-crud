@@ -49,5 +49,9 @@ public class KhachHang {
     @Column(name = "MatKhau")
     private String matKhau;
 
+    @Override
+    public String toString() {
+        return ten;
+    }
 
 }

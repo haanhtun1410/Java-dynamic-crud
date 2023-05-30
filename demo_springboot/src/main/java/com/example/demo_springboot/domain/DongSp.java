@@ -27,9 +27,6 @@ public class DongSp implements java.io.Serializable {
     @Column(name = "Ten")
     private String ten;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "dongSp", cascade = CascadeType.ALL)
-    private Set<ChiTietSp> chiTietSps;
-
     @Override
     public String toString() {
         return ten;

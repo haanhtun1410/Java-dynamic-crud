@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface FormField {
-    String label();
+    String label() default "chưa cài đặt label" ;
     FieldType type();
 
     enum FieldType {
@@ -15,13 +15,10 @@ public @interface FormField {
         NUMBER("number"),
         BOOLEAN("checkbox"),
         DATE("date");
-
         private final String inputType;
-
         FieldType(String inputType) {
             this.inputType = inputType;
         }
-
         public String getInputType() {
             return inputType;
         }

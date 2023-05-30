@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
-@Service
+@Service("Nsx")
 public class NsxService implements TemplateService<Nsx, UUID> {
 
     @Autowired

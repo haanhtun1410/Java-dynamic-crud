@@ -25,14 +25,6 @@ public class SanPham implements java.io.Serializable {
     @Column(name = "Ten")
     private String ten;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "sanPham" ,cascade = CascadeType.ALL)
-    private Set<ChiTietSp> chiTietSps;
-
-    public SanPham(String ma, String ten) {
-        this.ma = ma;
-        this.ten = ten;
-    }
-
     @Override
     public String toString() {
         return ten;

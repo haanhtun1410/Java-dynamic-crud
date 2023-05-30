@@ -31,14 +31,6 @@ public class Nsx implements java.io.Serializable {
     @Column(name = "Ten")
     private String ten;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "nsx", cascade = CascadeType.ALL)
-    private Set<ChiTietSp> chiTietSps = new HashSet<>();
-
-    public Nsx(UUID id, String ma, String ten) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-    }
 
     @Override
     public String toString() {

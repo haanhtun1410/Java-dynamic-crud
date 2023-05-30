@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
-@Service
+@Service("MauSac")
 public class MauSacService implements TemplateService<MauSac, UUID> {
 
     @Autowired

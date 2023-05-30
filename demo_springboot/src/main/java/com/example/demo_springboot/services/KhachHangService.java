@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
-@Service
+@Service("KhachHang")
 public class KhachHangService implements TemplateService<KhachHang, UUID> {
 
     private final KhachHangRepository khachHangRepository;
