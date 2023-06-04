@@ -1,5 +1,6 @@
 package com.example.demo_springboot.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import jakarta.persistence.*;
@@ -10,11 +11,12 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name = "KhachHang")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class KhachHang {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @FormField(label = "ID", type = FormField.FieldType.TEXT)
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @FormField(label = "ID", type = FormField.FieldType.ID)
     @Column(name = "Id", unique = true, nullable = false, length = 36)
     private UUID id;
 

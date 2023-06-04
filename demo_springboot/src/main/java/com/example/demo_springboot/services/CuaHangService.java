@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service("CuaHang")
-public class CuaHangService implements TemplateService<CuaHang, Long> {
+public class CuaHangService implements TemplateService<CuaHang, UUID> {
 
     @Autowired
     private CuaHangRepository cuaHangRepository;
@@ -21,7 +22,7 @@ public class CuaHangService implements TemplateService<CuaHang, Long> {
     }
 
     @Override
-    public CuaHang findById(Long id) {
+    public CuaHang findById(UUID id) {
         Optional<CuaHang> cuaHangOptional = cuaHangRepository.findById(id);
         return cuaHangOptional.orElse(null);
     }
@@ -32,7 +33,7 @@ public class CuaHangService implements TemplateService<CuaHang, Long> {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(UUID id) {
         cuaHangRepository.deleteById(id);
     }
 }

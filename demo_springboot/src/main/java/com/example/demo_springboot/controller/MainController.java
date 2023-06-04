@@ -3,6 +3,8 @@ package com.example.demo_springboot.controller;
 import com.example.demo_springboot.domain.FormField;
 import com.example.demo_springboot.domain.KhachHang;
 import com.example.demo_springboot.domain.NhanVienTEST;
+import com.example.demo_springboot.services.ChucVuService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,7 @@ import java.util.List;
 public class MainController {
     private ArrayList<NhanVienTEST> nhanVienTESTList = new ArrayList<>();
     private ArrayList<KhachHang> khachHangList = new ArrayList<KhachHang>();
+
 
     {
             NhanVienTEST nhanVienTEST1 = new NhanVienTEST(1L,"NV001", "John Doe", "Male", new Date(), "123 Main St", "1234567890", "password1", 1);

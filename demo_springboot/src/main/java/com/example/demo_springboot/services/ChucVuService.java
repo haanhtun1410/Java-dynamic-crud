@@ -2,6 +2,8 @@ package com.example.demo_springboot.services;
 import com.example.demo_springboot.domain.ChucVu;
 import com.example.demo_springboot.repos.ChucVuRepository;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

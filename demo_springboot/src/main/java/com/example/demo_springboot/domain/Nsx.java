@@ -1,5 +1,6 @@
 
 package com.example.demo_springboot.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import java.util.HashSet;
@@ -19,11 +20,12 @@ import jakarta.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Nsx implements java.io.Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "Id", unique = true, nullable = false, length = 36)
-    @FormField(label = "ID", type = FormField.FieldType.TEXT)
+    @FormField(label = "ID", type = FormField.FieldType.ID)
     private UUID id;
 
     @Column(name = "Ma", unique = true, length = 20)
@@ -33,6 +35,10 @@ public class Nsx implements java.io.Serializable {
     @Column(name = "Ten")
     @FormField(label = "Tên Màu Sắc", type = FormField.FieldType.TEXT)
     private String ten;
+
+    public Nsx(String id) {
+        this.id = UUID.fromString(id);
+    }
 
     @Override
     public String toString() {

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Brand Details</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th th:each="field : ${labels}" th:text="${field}"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="object: ${listDatas}">
+      <td th:each="field : ${fieldsOfData}" th:text="${field.get(object)}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

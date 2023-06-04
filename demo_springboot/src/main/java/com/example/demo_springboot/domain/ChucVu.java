@@ -1,11 +1,16 @@
 package com.example.demo_springboot.domain;
 
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -15,16 +20,20 @@ import java.util.UUID;
  */
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name="ChucVu"
         ,schema="dbo"
         ,catalog="FINALASS_FPOLYSHOP_FA22_SOF205__SOF2041"
         , uniqueConstraints = @UniqueConstraint(columnNames="Ma")
 )
-public class ChucVu  implements java.io.Serializable {
+public class ChucVu implements java.io.Serializable  {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "Id", unique = true, length = 36)
-    @FormField(label = "id",type = FormField.FieldType.TEXT)
-    private String id;
+    @FormField(label = "ID", type = FormField.FieldType.ID)
+    private UUID id;
 
     @FormField(label = "Mã",type = FormField.FieldType.TEXT)
     @Column(name = "Ma", unique = true, length = 20)
@@ -33,9 +42,14 @@ public class ChucVu  implements java.io.Serializable {
     @FormField(label = "Tên Chức Vụ",type = FormField.FieldType.TEXT)
     @Column(name = "Ten")
     private String ten;
+
+
+    public ChucVu(String id) {
+        this.id = UUID.fromString(id);
+    }
+
     @Override
     public String toString() {
         return ten;
     }
-
 }

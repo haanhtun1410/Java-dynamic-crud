@@ -4,12 +4,14 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>CuaHang List</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+<c:set var="fieldsOfData" value="${fieldsOfData}"></c:set>
+<c:set var="entity" value="${entity}"></c:set>
 <div class="container">
     <h2>Edit CuaHang</h2>
     <%--@elvariable id="md" type=""--%>

@@ -7,10 +7,12 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface FormField {
+
     String label() default "chưa cài đặt label" ;
     FieldType type();
 
     enum FieldType {
+        ID("hidden"),
         TEXT("text"),
         PASSWORD("password"),
         NUMBER("number"),

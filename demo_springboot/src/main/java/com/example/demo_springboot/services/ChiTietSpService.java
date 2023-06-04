@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service("ChiTietSp")
-public class ChiTietSpService implements TemplateService<ChiTietSp, UUID> {
+public class ChiTietSpService implements TemplateService<ChiTietSp,UUID> {
 
     @Autowired
     private ChiTietSpRepository chiTietSpRepository;

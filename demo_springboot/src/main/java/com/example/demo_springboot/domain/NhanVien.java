@@ -2,6 +2,9 @@ package com.example.demo_springboot.domain;
 
 import java.util.Date;
 import java.util.UUID;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 
@@ -15,14 +18,15 @@ import lombok.*;
         uniqueConstraints = @UniqueConstraint(columnNames = "Ma")
 )
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+@RequiredArgsConstructor(onConstructor_={@JsonCreator(mode = JsonCreator.Mode.DELEGATING)})
 public class NhanVien implements java.io.Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "Id", unique = true, nullable = false, length = 36)
-    @FormField(label = "ID", type = FormField.FieldType.TEXT)
+    @FormField(label = "ID", type = FormField.FieldType.ID)
     private UUID id;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -78,6 +82,20 @@ public class NhanVien implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Họ Tên: " + ho + " " + tenDem + " " + ten;
+        return "NhanVien{" +
+                "id=" + id +
+                ", chucVu=" + chucVu +
+                ", cuaHang=" + cuaHang +
+                ", ma='" + ma + '\'' +
+                ", ten='" + ten + '\'' +
+                ", tenDem='" + tenDem + '\'' +
+                ", ho='" + ho + '\'' +
+                ", gioiTinh='" + gioiTinh + '\'' +
+                ", ngaySinh=" + ngaySinh +
+                ", diaChi='" + diaChi + '\'' +
+                ", sdt='" + sdt + '\'' +
+                ", matKhau='" + matKhau + '\'' +
+                ", trangThai=" + trangThai +
+                '}';
     }
 }

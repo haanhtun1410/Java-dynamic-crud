@@ -1,19 +1,25 @@
 package com.example.demo_springboot.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Data
 @Entity
 @Table(name = "CuaHang")
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+@NoArgsConstructor
 public class CuaHang implements java.io.Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @FormField(label = "id",type = FormField.FieldType.TEXT)
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @FormField(label = "ID", type = FormField.FieldType.ID)
     @Column(name = "Id", unique = true, nullable = false, length = 36)
     private UUID id;
 
@@ -41,8 +47,14 @@ public class CuaHang implements java.io.Serializable {
     @Column(name = "QuocGia")
     private String quocGia;
 
+    public CuaHang(String id) {
+        this.id = UUID.fromString(id);
+    }
+
     @Override
     public String toString() {
         return ten;
     }
+
+
 }
