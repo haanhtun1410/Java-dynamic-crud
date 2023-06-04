@@ -65,7 +65,7 @@
                  <form method="POST" action="/test/curd/${entity}/add" name="formModel" >
                      <c:forEach var="entry" items = "${typeInputs}" varStatus="ind">
                          <c:if test="${fieldsOfData[ind.index].name ne 'id'}">
-                             <label for="${entry.key}">${ind.index}. ${entry.key}: ${fieldsOfData[ind.index].name} </label>
+                             <label for="${entry.key}">${ind.index}. ${entry.key}: </label>
                              <c:choose>
                                  <c:when test="${entry.value eq 'select'}">
                                      <select name="${fieldsOfData[ind.index].name}"  class=" form-control" >

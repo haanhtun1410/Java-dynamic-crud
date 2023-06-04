@@ -1,4 +1,4 @@
-package com.example.demo_springboot.controller;
+package com.example.demo_springboot.controller.testingController;
 
 import com.example.demo_springboot.domain.NhanVienTEST;
 import org.springframework.stereotype.Controller;
