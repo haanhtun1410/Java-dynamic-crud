@@ -5,19 +5,11 @@ import com.example.demo_springboot.services.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpSession;
 import lombok.SneakyThrows;
-import org.reflections.Reflections;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.View;
-
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Type;
 import java.util.*;
 
 @Controller
@@ -31,7 +23,6 @@ public class test {
     HttpSession session;
 
     @SneakyThrows @Transactional
-    ///get data
     @GetMapping("/curd/{entityName}")
     public String handleRequest(@PathVariable String entityName) {
         Class<?> clazz = Class.forName("com.example.demo_springboot.domain."+entityName);
@@ -66,7 +57,7 @@ public class test {
 
     @SneakyThrows
     @PostMapping("/curd/{entity}/add")
-    public String add(@PathVariable("entity") String entityName, @RequestParam Map<String, Object> formData) {
+    public String save(@PathVariable("entity") String entityName, @RequestParam Map<String, Object> formData) {
         for(Map.Entry e : formData.entrySet()){
             System.out.println(e.getKey() + " " +e.getValue());
         }
@@ -87,10 +78,12 @@ public class test {
     }
 
     @RequestMapping("/curd/{entity}/detail/{id}")
-    public String Detail(@PathVariable("entity") String entityName,@PathVariable("id") String id){
+    public String detail(@PathVariable("entity") String entityName,@PathVariable("id") String id){
         TemplateService service = serviceMap.get(entityName);
         System.out.println(service.findById(UUID.fromString(id)));
         session.setAttribute("detailEntity",service.findById(UUID.fromString(id)));
         return "update-form";
     }
 }
+
+//1controller for every entity in my db
