@@ -13,7 +13,7 @@ import java.lang.reflect.Field;
 import java.util.*;
 
 @Controller
-@RequestMapping("/test")
+@RequestMapping("/api")
 public class test {
 
     @Autowired
@@ -66,15 +66,14 @@ public class test {
         System.out.println(oke);
         System.out.println(oke.getClass());
         serviceMap.get(entityName).save(oke);
-        return "redirect:/test/curd/"+entityName;
+        return "redirect:/api/curd/"+entityName;
     }
 
-    @SneakyThrows
     @RequestMapping("/curd/{entity}/delete/{id}")
     public String delete(@PathVariable("entity") String entityName,@PathVariable("id") String id){
         TemplateService service = serviceMap.get(entityName);
         service.delete(UUID.fromString(id));
-        return "redirect:/test/curd/"+entityName;
+        return "redirect:/api/curd/"+entityName;
     }
 
     @RequestMapping("/curd/{entity}/detail/{id}")
@@ -84,6 +83,12 @@ public class test {
         session.setAttribute("detailEntity",service.findById(UUID.fromString(id)));
         return "update-form";
     }
+
+    @RequestMapping("/curd/{entity}#/{path}")
+    public String homdrice(@PathVariable("entity") String entityName,@PathVariable("path") String path){
+        return "redirect:/main-page#/"+path;
+    }
+
 }
 
 //1controller for every entity in my db

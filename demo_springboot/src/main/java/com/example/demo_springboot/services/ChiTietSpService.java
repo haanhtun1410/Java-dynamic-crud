@@ -35,4 +35,8 @@ public class ChiTietSpService implements TemplateService<ChiTietSp,UUID> {
     public void delete(UUID uuid) {
         chiTietSpRepository.deleteById(uuid);
     }
+
+    public List<ChiTietSp> findAllByDongSpId(UUID idDsp){
+             return chiTietSpRepository.findAllByDongSpId(idDsp);
+    }
 }

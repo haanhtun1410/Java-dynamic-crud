@@ -14,6 +14,8 @@ public class KhachHangService implements TemplateService<KhachHang, UUID> {
 
     private final KhachHangRepository khachHangRepository;
 
+
+
     @Autowired
     public KhachHangService(KhachHangRepository khachHangRepository) {
         this.khachHangRepository = khachHangRepository;
@@ -37,5 +39,10 @@ public class KhachHangService implements TemplateService<KhachHang, UUID> {
     @Override
     public void delete(UUID id) {
         khachHangRepository.deleteById(id);
+    }
+
+    public KhachHang getByUserName(String ma,String mk){
+        System.out.println(khachHangRepository.findByMaAndMatKhau(ma,mk));
+        return khachHangRepository.findByMaAndMatKhau(ma,mk);
     }
 }

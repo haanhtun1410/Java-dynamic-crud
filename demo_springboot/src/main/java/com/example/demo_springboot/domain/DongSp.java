@@ -27,11 +27,11 @@ public class DongSp implements java.io.Serializable {
     @FormField(label = "ID", type = FormField.FieldType.ID)
     private UUID id;
 
-    @FormField(label = "Mã sản phẩm", type = FormField.FieldType.TEXT)
+    @FormField(label = "Mã dòng sản phẩm", type = FormField.FieldType.TEXT)
     @Column(name = "Ma", unique = true, length = 20)
     private String ma;
 
-    @FormField(label = "Tên sản phẩm", type = FormField.FieldType.TEXT)
+    @FormField(label = "Tên dòng sản phẩm", type = FormField.FieldType.TEXT)
     @Column(name = "Ten")
     private String ten;
 
