@@ -23,7 +23,7 @@ public class ChiTietSpService implements TemplateService<ChiTietSp,UUID> {
 
     @Override
     public ChiTietSp findById(UUID uuid) {
-        return chiTietSpRepository.findById(uuid).orElse(null);
+        return chiTietSpRepository.findById(uuid).get();
     }
 
     @Override
@@ -39,4 +39,5 @@ public class ChiTietSpService implements TemplateService<ChiTietSp,UUID> {
     public List<ChiTietSp> findAllByDongSpId(UUID idDsp){
              return chiTietSpRepository.findAllByDongSpId(idDsp);
     }
+
 }

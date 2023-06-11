@@ -59,17 +59,19 @@
             <li><a href="#/about"  onclick="navigateToAnotherURL(this.href)">About</a></li>
             <li><a href="#/blog" onclick="navigateToAnotherURL(this.href)">Blog</a></li>
             <li><a href="#/contact" onclick="navigateToAnotherURL(this.href)">Contact</a></li>
-            <li>
-                <a href="/cart">
-                    <i style="font-size: 16px; color: gray" class="bi bi-basket3-fill"></i>
-                    <c:if test="${requestScope.cart.items.size() >0}">
+         <c:if test="${LoggedAccount ne null}">   <li>
+             <a href="/cart">
+                 <i style="font-size: 16px; color: gray" class="bi bi-basket3-fill"></i>
+                 <c:if test="${listItems.size() >0}">
                        <span
                                style="background-color: red"
                                class="badge badge-light"
-                       >${requestScope.cart.items.size()}</span>
-                    </c:if>
-                </a>
-            </li>
+                       >${listItems.size()}</span>
+                 </c:if>
+             </a>
+         </li>
+
+         </c:if>
             <c:if test="${LoggedAccount eq null}"><li><a href="/login" class="getstarted">Login</a></li>  </c:if>
             <c:if test="${LoggedAccount ne null}">
                 <li class="dropdown">

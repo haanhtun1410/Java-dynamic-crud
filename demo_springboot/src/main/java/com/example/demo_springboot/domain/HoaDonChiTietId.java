@@ -2,6 +2,10 @@ package com.example.demo_springboot.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
@@ -9,28 +13,16 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Embeddable
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
 public class HoaDonChiTietId implements Serializable {
     private static final long serialVersionUID = 6997533487734193841L;
     @Column(name = "IdHoaDon", nullable = false)
     private UUID idHoaDon;
     @Column(name = "IdChiTietSP", nullable = false)
     private UUID idChiTietSP;
-
-    public UUID getIdChiTietSP() {
-        return idChiTietSP;
-    }
-
-    public void setIdChiTietSP(UUID idChiTietSP) {
-        this.idChiTietSP = idChiTietSP;
-    }
-
-    public UUID getIdHoaDon() {
-        return idHoaDon;
-    }
-
-    public void setIdHoaDon(UUID idHoaDon) {
-        this.idHoaDon = idHoaDon;
-    }
 
     @Override
     public int hashCode() {

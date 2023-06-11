@@ -12,6 +12,7 @@ import java.util.UUID;
 public class HoaDon {
     @Id
     @Column(name = "Id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @ManyToOne

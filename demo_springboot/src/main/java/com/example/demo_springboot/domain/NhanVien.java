@@ -56,7 +56,7 @@ public class NhanVien implements java.io.Serializable {
     private String ho;
 
     @Column(name = "GioiTinh")
-    @FormField(label = "Giới Tính", type = FormField.FieldType.TEXT)
+    @FormField(label = "Giới Tính", type = FormField.FieldType.BOOLEAN)
     private String gioiTinh;
 
     @Temporal(TemporalType.DATE)

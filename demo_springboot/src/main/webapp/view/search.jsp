@@ -95,7 +95,7 @@
                           class="col-lg-3 mb-4 col-sm-6 portfolio-item"
                           ng-href="#/detail/{{product.id}}"
                   >
-                      <a href="#/detail/{{product.id}}">
+                      <a  href="/shop/detail/${product.id}">
                           <div class="portfolio-wrap">
                               <img
                                       src="../assets/img/product/${index.index+1}.jpg"
@@ -109,8 +109,7 @@
                                   <h3>${product.giaBan}$</h3>
                                   <div class="portfolio-links">
                                       <a
-                                              ng-click="addToCart(product.id)"
-                                              ng-href="#/cart"
+                                              href="/cart/add/${product.id}"
                                               data-gallery="portfolioGallery"
                                               class="portfolio-lightbox"
                                               title="Quick purchase"
@@ -148,7 +147,7 @@
                             class="col-lg-3 mb-4 col-sm-6 portfolio-item"
                             ng-href="#/detail/{{product.id}}"
                     >
-                        <a href="#/detail/{{product.id}}">
+                        <a  href="/shop/detail/${product.id}">
                             <div class="portfolio-wrap">
                                 <img
                                         src="../assets/img/product/${index.index+1}.jpg"
@@ -162,8 +161,7 @@
                                     <h3>${product.giaBan}$</h3>
                                     <div class="portfolio-links">
                                         <a
-                                                ng-click="addToCart(product.id)"
-                                                ng-href="#/cart"
+                                                href="/cart/add/${product.id}"
                                                 data-gallery="portfolioGallery"
                                                 class="portfolio-lightbox"
                                                 title="Quick purchase"

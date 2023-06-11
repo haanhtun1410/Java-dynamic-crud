@@ -46,73 +46,36 @@
                     <span>${detail.giaBan}$</span>
                 </div>
                 <p class="lead">${detail.moTa}</p>
-                <div class="d-flex">
+                <p class="lead">Màu : ${detail.mauSac.ten}</p>
+                <p class="lead">Số lượng : ${detail.soLuongTon}</p>
+
+                <form action="/cart/add/quantity-change" method="post" class="d-flex">
                     <input
                             class="form-control text-center me-3"
                             id="inputQuantity"
                             type="number"
-                            ng-model="fromDetail"
                             step="1"
                             min="1"
-                            max="300"
+                            name="quantity"
+                            max="${detail.soLuongTon}"
                             style="max-width: 5rem"
+                            value="1"
                     />
+                    <input type="hidden" name="idsp" value="${detail.id}">
+                    <input type="hidden" name="idgh" value="${cart.id}">
                     <button
-                            ng-click="addToCart(selectedProduct.id)"
                             class="btn btn-outline-dark flex-shrink-0"
-                            type="button"
+                            type="submit"
                     >
                         <i class="bi-cart-fill me-1"></i>
                         Add to cart
                     </button>
-                </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
 <!-- Related items section-->
-<section class="py-5 bg-light">
-    <div class="container px-4 px-lg-5 mt-5">
-        <h2 class="fw-bolder mb-4">Related products</h2>
-        <div
-                class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
-        >
-            <div
-                    class="col mb-5"
-                    ng-repeat="product in shuffleArray(products) |limitTo : 4"
-            >
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <img
-                            class="card-img-top"
-                            ng-src="/assets/img/product/{{product.image}}"
-                            alt="..."
-                            style="max-height: 300px; max-width: 300px; object-fit: cover"
-                    />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">{{product.name}}</h5>
-                            <!-- Product price-->
-                            {{product.price}}$
-                        </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
-                            <a
-                                    class="btn btn-outline-dark mt-auto"
-                                    href="#/detail/{{product.id}}"
-                            >View options</a
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <%@include file="../WEB-INF/layout/footer.jsp" %>
 </body>
 <script src="../js/bootstrap.bundle.min.js"></script>

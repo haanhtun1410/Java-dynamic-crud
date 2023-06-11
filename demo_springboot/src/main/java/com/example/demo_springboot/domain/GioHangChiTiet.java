@@ -3,10 +3,16 @@ package com.example.demo_springboot.domain;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class GioHangChiTiet {
     @EmbeddedId
     private GioHangChiTietId id;
@@ -50,5 +56,15 @@ public class GioHangChiTiet {
 
     public void setId(GioHangChiTietId id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "GioHangChiTiet{" +
+                "id=" + id +
+                ", soLuong=" + soLuong +
+                ", donGia=" + donGia +
+                ", donGiaKhiGiam=" + donGiaKhiGiam +
+                '}';
     }
 }

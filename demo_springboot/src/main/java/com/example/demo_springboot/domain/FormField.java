@@ -17,7 +17,9 @@ public @interface FormField {
         PASSWORD("password"),
         NUMBER("number"),
         SELECT("select"),
+
         BOOLEAN("checkbox"),
+
         DATE("date");
         private final String inputType;
         FieldType(String inputType) {

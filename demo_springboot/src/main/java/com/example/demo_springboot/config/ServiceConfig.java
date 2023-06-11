@@ -28,8 +28,6 @@ public class ServiceConfig {
     @Autowired
     private HttpSession ss;
 
-    @Autowired
-    private ChiTietSpService chiTietSpService;
 
       @Bean("getEntity")
       List<String> getEntityList() {

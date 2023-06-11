@@ -26,6 +26,7 @@
     <link href="../css/plugins/swiper/swiper-bundle.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/custom/core-style.css" />
     <link href="../css/custom/style.css" rel="stylesheet" />
+
 </head>
 <body>
 <jsp:include page="../WEB-INF/layout/header.jsp" />
@@ -38,7 +39,7 @@
                             class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4"
                             style="color: #709085"
                     ></i>
-                    <span class="h1 fw-bold mb-0"></span>
+                    <span class="h1 fw-bold mb-0">${errorMessage}</span>
                 </div>
 
                 <div
@@ -105,7 +106,17 @@
     </div>
 </section>
 <%@include file="../WEB-INF/layout/footer.jsp" %>
-</body>
+
+<script>
+    window.onload = function() {
+        // Check if the cart is missing
+        if (${errorMessage}) {
+            alert('Your cart is empty. Please login.');
+        }
+        // Redirect to the login page
+        window.location.href = '/login';
+    }
+</script>
 <script src="../js/bootstrap.bundle.min.js"></script>
 <script src="../js/jquery-3.2.1.min.js"></script>
 <script src="../css/plugins/iconic/fonts/Material-Design-Iconic-Font.woff"></script>
@@ -115,6 +126,6 @@
 <script src="../css/plugins/swiper/swiper-bundle.min.js"></script>
 <script src="../css/plugins/waypoints/noframework.waypoints.js"></script>
 <script src="../css/plugins/php-email-form/validate.js"></script>
-
+</body>
 </html>
 

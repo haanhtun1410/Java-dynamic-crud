@@ -8,4 +8,5 @@ import java.util.UUID;
 @Repository
 public interface KhachHangRepository extends JpaRepository<KhachHang, UUID> {
     KhachHang findByMaAndMatKhau(String ma,String matKhau);
+
 }

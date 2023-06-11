@@ -97,7 +97,7 @@
                                     <!-- Ratings & Cart -->
                                     <div class="ratings-cart text-right">
                                         <div class="cart">
-                                            <a
+                                            <a  href="/cart/add/${product.id}"
                                                     data-toggle="tooltip"
                                                     data-placement="left"
                                                     title="Add to Cart"
